@@ -470,7 +470,7 @@ form button:hover {
 
 .flow-connector {
   position: relative;
-  width: 400px;
+  width: 300px;
   height: 4px;
   background: transparent;
   flex: 0 0 auto;
@@ -514,7 +514,8 @@ form button:hover {
   }
 
   .flow-image {
-    max-width: 300px;
+    max-width: 500px;
+    height: auto;
   }
 }
 
@@ -542,11 +543,11 @@ form button:hover {
 
 @media (max-width: 480px) {
   .flow-image {
-    max-width: 200px;
+    max-width: 300px;
   }
 
   .flow-connector {
-    height: 80px;
+    height: 180px;
   }
 
   .flow-diagram {

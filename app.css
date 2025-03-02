@@ -1,0 +1,562 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and HTML */
+body, html {
+  overflow-x: hidden; /* Prevent scrolling to the right */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background: rgb(249, 242, 229); /* Maintain background */
+}
+
+#about-us-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff; /* Optional: Make it look like a clickable link */
+}
+#about-us-link:hover {
+  color: #1f1f1f; /* Optional: Hover effect */
+}
+
+/* Main Section */
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space elements with one at the top and one at the bottom */
+  align-items: center;
+  color: white;
+  position: relative; /* Allow positioning of child elements */
+
+  /* Fallback background color */
+  background-color: #1a2a44;
+
+  background-image: 
+    /* Small white dots mimicking stars */
+    radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    /* Additional layer of smaller stars */
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 0.5px, transparent 0.5px),
+    /* Soft linear gradient for a night sky fade */
+    linear-gradient(135deg, #1a2a44 0%, #2e4a6d 50%, #3b5998 100%);
+
+/* Define the size of each layer */
+background-size: 
+   50px 50px, /* Larger stars */
+   30px 30px, /* Smaller stars */
+   cover; /* Sky gradient */
+
+/* Position the patterns */
+background-position: 
+   0 0, /* Larger stars */
+   25px 25px, /* Smaller stars */
+   0 0; /* Sky gradient */
+
+background-repeat: 
+   repeat, /* Larger stars */
+   repeat, /* Smaller stars */
+   no-repeat; /* Sky gradient */
+
+position: relative; /* Required for absolute positioning of the moon icon */
+}
+
+.moon-icon {
+  position: absolute;
+  top: 20%; /* Position near the top */
+  right: 20%; /* Position toward the right */
+  font-size: 150px; /* Size of the moon icon */
+  color: #ffffffd8; /* Warm yellow for a moon-like glow */
+  opacity: 3; /* Slightly translucent to blend with the background */
+  z-index: 0; /* Ensure it stays behind the content */
+}
+
+.about {
+  text-align: center;
+  position: relative;
+}
+
+.about h1 {
+  font-size: 5rem;
+  color: #ffffff;
+}
+
+.about h2 {
+  font-size: 2.7rem;
+  margin-top: 8px;
+  color: #ffffff;
+}
+
+
+.text-slide {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+  opacity: 0;
+  position: absolute; /* Stack the slides on top of each other */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+  width: 100%; /* Ensure it takes the full width for proper centering */
+  text-align: center; /* Center the text if needed */
+}
+
+/* Class to show the active slide */
+.text-slide.active {
+  opacity: 1;
+}
+
+.additional-content h1 {
+  font-size: 50px;
+  margin-top: 30px;
+  color: rgb(0, 0, 0);
+  padding: 0px 10px;
+}
+
+.additional-content p {
+  font-size: 1.4rem;
+  color: rgb(50, 50, 50);
+  margin: 5px;
+  padding: 0px 10px;
+}
+
+/* Hanger Section */
+.hanger {
+  flex-grow: 1; /* Allows it to remain in the middle */
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main .bar {
+  background-color: #FDB515;
+  padding: 10px;
+  width: 100%;
+  min-height: 70px;
+  z-index: 1;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* bar */
+.bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.icon {
+  color: rgb(0, 0, 0);
+  font-size: 2.2rem;
+  text-decoration: none;
+  display: flex; /* Allows better alignment inside the flex container */
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #FDB515; 
+}
+
+.profile-picture {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Titles List */
+.titles-list {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+
+  padding: 0 20px;
+}
+
+.titles-list h1 {
+  font-size: 2rem;
+  color: rgb(5, 71, 119);
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.titles-list h1:hover {
+  color: #2b2b2b; 
+}
+
+.titles-list a {
+  font-size: 1.5rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.titles-list p:hover {
+  color: #2b2b2b; 
+}
+
+/* Additional Content Section */
+.additional-content {
+  min-height: 100vh; /* Full viewport height for new content */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff; /* Different background for contrast */
+  color: #003262;
+}
+
+.additional-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+/* About Me Section */
+.about-me {
+  min-height: 100vh; /* Ensure it occupies the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  padding-top: 100px;
+}
+
+/* General Styling for the Container */
+.about-container {
+  width: 800px; /* Fixed container width */
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center align the text */
+}
+
+/* Image Section */
+.about-image {
+  width: 300px; /* Fixed width for the image */
+  margin: 0 auto; /* Center the image */
+}
+
+.about-image img {
+  width: 100%; /* Scale to fit the container width */
+  aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+  border-radius: 50%; /* Make the image circular */
+  border: 6px solid #003262; /* Frame border */
+  object-fit: cover; /* Ensure the image fills the circle */
+}
+
+/* Bio Section */
+.about-bio {
+  width: 700px; /* Fixed width for the bio section */
+  margin: 20px auto; /* Center the bio and add spacing from the image */
+  text-align: center; /* Center-align text */
+}
+
+.about-bio h1 {
+  font-size: 4rem;
+  font-family: poppins;
+  color: #2e2e2e; /* UC Berkeley's primary blue color */
+  margin-bottom: 10px;
+}
+
+.about-bio p {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  text-align: justify;
+  color: #333; /* Dark gray for readability */
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    width: 97%; /* Adjust container width for smaller screens */
+  }
+
+  .about-image {
+    width: 200px; /* Reduce image size for tablets */
+  }
+
+  .about-bio {
+    width: 97%; /* Adjust bio width */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+    width: 200px; /* Further reduce image size for small screens */
+  }
+
+  .about-bio p {
+    font-size: 1.1rem; /* Adjust paragraph font size */
+  }
+}
+
+
+/* Form Container */
+form {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Form Labels */
+form label {
+  display: flex;
+  padding-left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+form h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+form h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input {
+  height: 60px;
+}
+
+/* Form Inputs */
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Input Focus State */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #003262;
+}
+
+/* Textarea */
+form textarea {
+  height: 150px;
+  resize: vertical; /* Allow resizing vertically */
+}
+
+/* Submit Button */
+form button {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #087278;
+  color: #fff;
+  border: none;
+  height: 60px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Button */
+form button:hover {
+  background-color: #003262;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  form {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  form button {
+    font-size: 16px;
+  }
+}
+
+
+.footer {
+  background-color: #c39305;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+/* Flow section */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.flow-item {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  flex: 0 1 auto;
+}
+
+.flow-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.flow-connector {
+  position: relative;
+  width: 400px;
+  height: 4px;
+  background: transparent;
+  flex: 0 0 auto;
+}
+
+.flow-dash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 50%, #ccd2cd 50%);
+  background-size: 20px 100%;
+  animation: flow-horizontal 2s linear infinite;
+}
+
+/* Horizontal animation */
+@keyframes flow-horizontal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Vertical animation */
+@keyframes flow-vertical {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 20px;
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .flow-connector {
+    width: 150px;
+  }
+
+  .flow-image {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-diagram {
+    flex-direction: column;
+  }
+
+  .flow-connector {
+    width: 4px;
+    height: 300px;
+    /* Remove transform: rotate(90deg) since we'll adjust the animation direction directly */
+  }
+
+  .flow-dash {
+    background: linear-gradient(to bottom, transparent 50%, #ccd2cd 50%);
+    background-size: 100% 20px; /* Adjust for vertical dashes */
+    animation: flow-vertical 2s linear infinite;
+  }
+
+  .flow-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-image {
+    max-width: 200px;
+  }
+
+  .flow-connector {
+    height: 80px;
+  }
+
+  .flow-diagram {
+    gap: 1.5rem;
+  }
+}
+/* End flow section */
+
+
+.footer-links a:hover {
+  color: #064783; /* Spotify Green for a nice effect */
+}
+

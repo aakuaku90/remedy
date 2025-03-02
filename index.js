@@ -6,8 +6,15 @@ document.getElementById('send-email').addEventListener('click', function () {
   const email = document.getElementById('email');
   const institution = document.getElementById('institution');
   const message = document.getElementById('message');
+  const permission = document.getElementById('permission');
 
-  if (!name.value || !email.value || !institution.value || !message.value) {
+  if (
+    !name.value ||
+    !email.value ||
+    !institution.value ||
+    !institution.value ||
+    !message.value
+  ) {
     alert('All fields are required.');
     return;
   }
@@ -17,6 +24,7 @@ document.getElementById('send-email').addEventListener('click', function () {
     email: email.value,
     email: institution.value,
     message: message.value,
+    message: permission.value,
   };
 
   emailjs
@@ -28,6 +36,7 @@ document.getElementById('send-email').addEventListener('click', function () {
       email.value = '';
       institution.value = '';
       message.value = '';
+      permission.value = '';
     })
     .catch(function (error) {
       alert('Failed to send message. Please try again.');

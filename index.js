@@ -1,5 +1,5 @@
 // Emails
-emailjs.init('dKTzGGTarsTgSIOsQ'); // Replace with your EmailJS User ID
+emailjs.init('mOR26TuZNsb4w1LIU'); // Replace with your EmailJS User ID
 
 document.getElementById('send-email').addEventListener('click', function () {
   const name = document.getElementById('name');

@@ -12,8 +12,8 @@ document.getElementById('send-email').addEventListener('click', function () {
     !name.value ||
     !email.value ||
     !institution.value ||
-    !institution.value ||
-    !message.value
+    !message.value ||
+    !permission.value
   ) {
     alert('All fields are required.');
     return;
@@ -22,9 +22,9 @@ document.getElementById('send-email').addEventListener('click', function () {
   const templateParams = {
     name: name.value,
     email: email.value,
-    email: institution.value,
+    institution: institution.value,
     message: message.value,
-    message: permission.value,
+    permission: permission.value,
   };
 
   emailjs

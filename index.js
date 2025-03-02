@@ -28,7 +28,7 @@ document.getElementById('send-email').addEventListener('click', function () {
   };
 
   emailjs
-    .send('service_enwer1c', 'template_ed9j9o8', templateParams)
+    .send('service_upqksmh', 'template_r7mcw9f', templateParams)
     .then(function (response) {
       alert('Message sent successfully!');
       // Clear the form fields

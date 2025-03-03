@@ -1,5 +1,5 @@
 // Emails
-emailjs.init('mOR26TuZNsb4w1LIU'); // Replace with your EmailJS User ID
+emailjs.init('ODaZ-Vr4tir5nIP9p'); // Replace with your EmailJS User ID
 
 document.getElementById('send-email').addEventListener('click', function () {
   const name = document.getElementById('name');
@@ -28,7 +28,7 @@ document.getElementById('send-email').addEventListener('click', function () {
   };
 
   emailjs
-    .send('service_upqksmh', 'template_r7mcw9f', templateParams)
+    .send('service_upyfrn7', 'template_2xiax8z', templateParams)
     .then(function (response) {
       alert('Message sent successfully!');
       // Clear the form fields

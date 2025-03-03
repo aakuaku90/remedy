@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const templateParams = {
       name: name.value,
       email: email.value,
-      institution: institutionMap[institution.value] || institution.value, // Use mapped text or fallback to value
+      institution: institutionMap[institution.value] || institution.value,
       message: message.value,
       permission: permission.value,
     };

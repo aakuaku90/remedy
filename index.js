@@ -76,7 +76,7 @@ function showNextSlide() {
 slides[currentSlide].classList.add('active');
 
 // Rotate every 5 seconds (5000ms)
-setInterval(showNextSlide, 10000);
+setInterval(showNextSlide, 6000);
 
 document.addEventListener('DOMContentLoaded', function () {
   // Get the "About Us" link

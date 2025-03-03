@@ -1,46 +1,52 @@
-// Emails
-emailjs.init('ODaZ-Vr4tir5nIP9p'); // Replace with your EmailJS User ID
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize EmailJS with your Public Key
+  emailjs.init('ODaZ-Vr4tir5nIP9p'); // Ensure this matches your EmailJS Public Key
 
-document.getElementById('send-email').addEventListener('click', function () {
-  const name = document.getElementById('name');
-  const email = document.getElementById('email');
-  const institution = document.getElementById('institution');
-  const message = document.getElementById('message');
-  const permission = document.getElementById('permission');
+  document.getElementById('send-email').addEventListener('click', function () {
+    // Get form elements
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const institution = document.getElementById('institution');
+    const message = document.getElementById('message');
+    const permission = document.getElementById('permission');
 
-  if (
-    !name.value ||
-    !email.value ||
-    !institution.value ||
-    !message.value ||
-    !permission.value
-  ) {
-    alert('All fields are required.');
-    return;
-  }
+    // Validate all fields
+    if (
+      !name.value ||
+      !email.value ||
+      !institution.value ||
+      !message.value ||
+      !permission.value
+    ) {
+      alert('All fields are required.');
+      return;
+    }
 
-  const templateParams = {
-    name: name.value,
-    email: email.value,
-    institution: institution.value,
-    message: message.value,
-    permission: permission.value,
-  };
+    // Prepare EmailJS template parameters
+    const templateParams = {
+      name: name.value,
+      email: email.value,
+      institution: institution.value,
+      message: message.value,
+      permission: permission.value,
+    };
 
-  emailjs
-    .send('service_upyfrn7', 'template_2xiax8z', templateParams)
-    .then(function (response) {
-      alert('Message sent successfully!');
-      // Clear the form fields
-      name.value = '';
-      email.value = '';
-      institution.value = '';
-      message.value = '';
-      permission.value = '';
-    })
-    .catch(function (error) {
-      alert('Failed to send message. Please try again.');
-    });
+    console.log('Sending email with params:', templateParams); // Debugging
+
+    // Send email via EmailJS
+    emailjs
+      .send('service_upyfrn7', 'template_2xiax8z', templateParams)
+      .then(function (response) {
+        console.log('Email sent successfully:', response);
+        alert('Message sent successfully!');
+        // Reset the entire form
+        document.getElementById('contact-form').reset();
+      })
+      .catch(function (error) {
+        console.error('Failed to send message:', error);
+        alert('Failed to send message. Please try again.');
+      });
+  });
 });
 
 // JavaScript to handle text rotation every 5 seconds

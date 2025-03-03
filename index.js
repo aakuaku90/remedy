@@ -22,11 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    // Mapping of institution values to human-readable text
+    const institutionMap = {
+      'sleep-coach-looking-for-clients':
+        'I’m a sleep coach looking to connect with more clients',
+      'looking-for-sleep-coach': 'I’m looking for a sleep coach',
+      other: 'Other',
+    };
+
     // Prepare EmailJS template parameters
     const templateParams = {
       name: name.value,
       email: email.value,
-      institution: institution.value,
+      institution: institutionMap[institution.value] || institution.value,
       message: message.value,
       permission: permission.value,
     };

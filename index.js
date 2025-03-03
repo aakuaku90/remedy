@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Send email via EmailJS
     emailjs
-      .send('service_upyfrn7', 'template_2xiax8z', templateParams)
+      .send('service_912i7z8', 'template_2xiax8z', templateParams)
       .then(function (response) {
         console.log('Email sent successfully:', response);
         alert('Message sent successfully!');
